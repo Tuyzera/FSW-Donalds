@@ -13,7 +13,7 @@ import { notFound } from "next/navigation";
 
 import { getRestaurantsBySlug } from "@/data/getRestaurantsBySlug";
 
-import ConsumptionMethodOption from "./components/conceptionMethodOption";
+import ConsumptionMethodOption from "./components/consumptionMethodOption";
 
 interface RestaurantPageProps {
     params: Promise<{ slug: string }>;
@@ -42,8 +42,8 @@ const RestaurantPage = async ({ params }: RestaurantPageProps) => {
                 <p className="opacity-55">Escolha como prefere aproveitar sua refeição. Estamos a oferecer praticidade e sabor em cada detalhe!</p>
             </div>
             <div className="pt-14 grid grid-cols-2 gap-4">
-                <ConsumptionMethodOption imageUrl="/Dine_in.png" imageAlt="Para comer aqui" buttonText="Para comer aqui" />
-                <ConsumptionMethodOption imageUrl="/Takeaway.png" imageAlt="Para levar" buttonText="Para levar" />
+                <ConsumptionMethodOption slug={slug} imageUrl="/Dine_in.png" imageAlt="Para comer aqui" buttonText="Para comer aqui" option="DINE_IN" />
+                <ConsumptionMethodOption slug={slug} imageUrl="/Takeaway.png" imageAlt="Para levar" buttonText="Para levar" option="TAKEAWAY" />
             </div>
 
         </div>
